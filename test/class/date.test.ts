@@ -19,7 +19,7 @@ t.test('Date', function (t) {
   })
 
   t.test('isISO8601Date', function (t) {
-    t.plan(7)
+    t.plan(9)
 
     t.test('toISOString', function (t) {
       t.plan(1)
@@ -31,9 +31,19 @@ t.test('Date', function (t) {
       t.equal(isISO8601Date('2012-01-01T17:52:27.8116975-12:00'), true)
     })
 
+    t.test('2012-01-01T17:52:27.811-1200', function (t) {
+      t.plan(1)
+      t.equal(isISO8601Date('2012-01-01T17:52:27.811-1200'), true)
+    })
+
     t.test('2012-01-01T17:52:27.8116975+08:00', function (t) {
       t.plan(1)
       t.equal(isISO8601Date('2012-01-01T17:52:27.8116975+08:00'), true)
+    })
+
+    t.test('2012-01-01T17:52:27.811+0800', function (t) {
+      t.plan(1)
+      t.equal(isISO8601Date('2012-01-01T17:52:27.811+0800'), true)
     })
 
     t.test('2012-02-01T18:21:06', function (t) {
