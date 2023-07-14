@@ -4,7 +4,7 @@ import { isNull } from '../primitive/null'
 import { isEmpty as isEmptyString } from '../primitive/string'
 import { isUndefined } from '../primitive/undefined'
 
-export type Empty = undefined | null | '' | {} | []
+export type Empty = undefined | null | '' | Record<string, never> | []
 
 export function isEmpty (value: unknown): value is Empty {
   return isUndefined(value) || isNull(value) || isEmptyString(value) || isEmptyJSON(value) || isEmptyArray(value)

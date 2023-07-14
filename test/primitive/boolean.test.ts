@@ -108,7 +108,7 @@ t.test('Boolean', function (t) {
 
     t.test('expression (1 === 0)', function (t) {
       t.plan(1)
-      // @ts-expect-error
+      // @ts-expect-error we need to test for expression
       t.equal(isFalse(1 === 0), true)
     })
   })
